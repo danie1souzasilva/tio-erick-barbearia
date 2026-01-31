@@ -1,0 +1,211 @@
+/* =====================
+   RESET + BASE
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-main: #0b0b10;
+    --bg-card: #16161f;
+    --roxo: #7a3cff;
+    --roxo-neon: #9b6dff;
+    --texto: #f2f2f4;
+    --texto-suave: #b8b8c2;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* =====================
+   HEADER (IMPACTO)
+===================== */
+header {
+    padding: 72px 20px 56px;
+    text-align: center;
+    background:
+        radial-gradient(circle at top, rgba(122,60,255,0.25), transparent 60%),
+        linear-gradient(180deg, #0b0b10, #141420);
+    border-bottom: 3px solid var(--roxo);
+}
+
+header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+header p {
+    color: var(--texto-suave);
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--roxo-neon);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =====================
+   MAIN
+===================== */
+main {
+    padding: 20px;
+}
+
+/* =====================
+   SECTIONS (CARDS)
+===================== */
+section {
+    background-color: var(--bg-card);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--roxo-neon);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =====================
+   SERVIÇOS
+===================== */
+#servicos ul {
+    list-style: none;
+}
+
+#servicos li {
+    padding: 10px 0;
+    border-bottom: 1px solid #242433;
+    font-size: 1rem;
+}
+
+#servicos li:last-child {
+    border-bottom: none;
+}
+
+/* =====================
+   GALERIA
+===================== */
+.galeria {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+.galeria img {
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.03);
+    border-color: var(--roxo-neon);
+}
+
+/* =====================
+   BOTÃO WHATSAPP
+===================== */
+.btn-whatsapp {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--roxo), var(--roxo-neon));
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 40px;
+    box-shadow: 0 0 20px rgba(122,60,255,0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(155,109,255,0.6);
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+}
+
+/* =====================
+   TABLET
+===================== */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 3.8rem;
+    }
+
+    main {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =====================
+   DESKTOP
+===================== */
+@media (min-width: 1024px) {
+    header {
+        padding: 90px 20px 70px;
+    }
+
+    section {
+        padding: 28px;
+    }
+}
