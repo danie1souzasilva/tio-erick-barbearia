@@ -1,78 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tio Erick barbearia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tio Erick Barbearia</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header>
-    <h1>Tio Erick barbearia</h1>
-    <p>Cortes de qualidade para a ADE</p>
+<header class="hero">
+  <div class="hero-content">
+    <h1>Tio Erick</h1>
+    <p class="subtitle">Barbearia</p>
+
+    <a
+      href="https://wa.me/5561996971750?text=Olá!%20Vim%20pelo%20site%20da%20Tio%20Erick%20Barbearia%20e%20gostaria%20de%20agendar%20um%20horário."
+      target="_blank"
+      class="cta-barber"
+    >
+      Agendar horário
+    </a>
+  </div>
 </header>
 
 <main>
 
-    <section id="sobre">
-        <h2>Sobre</h2>
-        <p>
-            Somos um negócio local que atua oferecendo serviços com qualidade,
-            profissionalismo e atenção aos detalhes, sempre buscando a satisfação
-            dos nossos clientes.
-        </p>
-    </section>
+  <section id="sobre" class="reveal">
+    <h2>Sobre</h2>
+    <p>
+      Barbearia local focada em cortes modernos, atendimento de verdade
+      e respeito ao estilo de cada cliente.
+    </p>
+  </section>
 
-    <section id="servicos">
-        <h2>Serviços</h2>
-        <ul>
-            <li>Corte masculino</li>
-            <li>Corte feminino</li>
-            <li>Tratamento capilar</li>
-            <li>Barba</li>
-            <li>Pigmentação</li>
-        </ul>
-    </section>
+  <section id="servicos" class="reveal">
+    <h2>Serviços</h2>
+    <ul class="lista-servicos">
+      <li>Corte masculino</li>
+      <li>Corte feminino</li>
+      <li>Barba</li>
+      <li>Tratamento capilar</li>
+      <li>Pigmentação</li>
+    </ul>
+  </section>
 
-    <section id="galeria">
-        <h2>Alguns trabalhos</h2>
-        <div class="galeria">
-            <img src="img/corte1.jpg" alt="Exemplo de corte 1">
-            <img src="img/corte2.jpg" alt="Exemplo de corte 2">
-            <img src="img/corte3.jpg" alt="Exemplo de corte 3">
-        </div>
-    </section>
+  <section id="galeria" class="reveal">
+    <h2>Alguns trabalhos</h2>
+    <div class="galeria">
+      <img src="img/corte1.jpg" alt="Corte masculino">
+      <img src="img/corte2.jpg" alt="Corte barba">
+      <img src="img/corte3.jpg" alt="Corte moderno">
+    </div>
+  </section>
 
-    <section id="horarios">
-        <h2>Horário de Funcionamento</h2>
-        <p>Segunda a Sexta: 09h às 18h</p>
-        <p>Sábado: 09h às 20h</p>
-    </section>
+  <section id="horarios" class="reveal">
+    <h2>Horário</h2>
+    <p>Segunda a Sexta: 09h às 18h</p>
+    <p>Sábado: 09h às 20h</p>
+  </section>
 
-    <section id="localizacao">
-        <h2>Localização</h2>
-        <p>ADE de águas claras/DF</p>
-    </section>
-
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Clique no botão abaixo para falar diretamente pelo WhatsApp:</p>
-        <a class="btn-whatsapp"
-           href="https://wa.me/5561996971750"
-           target="_blank">
-            Falar no WhatsApp
-        </a>
-    </section>
+  <section id="localizacao" class="reveal">
+    <h2>Localização</h2>
+    <p>ADE Águas Claras – DF</p>
+  </section>
 
 </main>
 
-<footer>
-    <p>© 2026 – Tio Erick</p>
+<footer class="reveal">
+  <p>© 2026 – Tio Erick Barbearia</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
-

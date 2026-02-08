@@ -1,211 +1,158 @@
-/* =====================
-   RESET + BASE
-===================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 :root {
-    --bg-main: #0b0b10;
-    --bg-card: #16161f;
-    --roxo: #7a3cff;
-    --roxo-neon: #9b6dff;
-    --texto: #f2f2f4;
-    --texto-suave: #b8b8c2;
+  --gold: #d4af37;
+  --gold-light: #f5e6b3;
 }
 
-html {
-    scroll-behavior: smooth;
+/* RESET */
+* {
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', Arial, sans-serif;
-    background-color: var(--bg-main);
-    color: var(--texto);
-    line-height: 1.6;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--gold-light);
+  line-height: 1.6;
+  position: relative;
 }
 
-/* =====================
-   HEADER (IMPACTO)
-===================== */
-header {
-    padding: 72px 20px 56px;
-    text-align: center;
-    background:
-        radial-gradient(circle at top, rgba(122,60,255,0.25), transparent 60%),
-        linear-gradient(180deg, #0b0b10, #141420);
-    border-bottom: 3px solid var(--roxo);
+/* FUNDO GLOBAL */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(30,30,35,0.55), rgba(30,30,35,0.75)),
+    url("img/bg-site.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  z-index: -1;
 }
 
-header h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3rem;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
+/* HEADER */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
 }
 
-header p {
-    color: var(--texto-suave);
-    font-size: 1.05rem;
-    margin-bottom: 24px;
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.6rem;
+  letter-spacing: 4px;
+  color: var(--gold);
+  margin: 0;
 }
 
-/* NAV */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  margin: 0.6rem auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
-nav a {
-    text-decoration: none;
-    color: var(--texto);
-    font-weight: 600;
-    position: relative;
-    padding-bottom: 4px;
+.subtitle {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
 }
 
-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--roxo-neon);
-    transition: width 0.3s ease;
+/* BOTÃO */
+.cta-barber {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  border: 2px solid var(--gold);
+  border-radius: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: transparent;
+  transition: all 0.25s ease;
 }
 
-nav a:hover::after {
-    width: 100%;
+.cta-barber:hover {
+  background: rgba(212,175,55,0.15);
+  box-shadow: 0 6px 18px rgba(212,175,55,0.35);
+  transform: translateY(-2px);
 }
 
-/* =====================
-   MAIN
-===================== */
+/* SEÇÕES */
 main {
-    padding: 20px;
+  padding: 2rem 1rem;
 }
 
-/* =====================
-   SECTIONS (CARDS)
-===================== */
-section {
-    background-color: var(--bg-card);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+section, footer {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.55);
+  border-radius: 12px;
 }
 
-section h2 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-    color: var(--roxo-neon);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+h2 {
+  color: var(--gold);
+  margin-top: 0;
+  border-left: 4px solid var(--gold);
+  padding-left: 0.75rem;
 }
 
-/* =====================
-   SERVIÇOS
-===================== */
-#servicos ul {
-    list-style: none;
+/* SERVIÇOS */
+.lista-servicos {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-#servicos li {
-    padding: 10px 0;
-    border-bottom: 1px solid #242433;
-    font-size: 1rem;
+.lista-servicos li {
+  padding: 0.9rem 1rem;
+  background: rgba(255,255,255,0.05);
+  border-left: 4px solid var(--gold);
 }
 
-#servicos li:last-child {
-    border-bottom: none;
-}
-
-/* =====================
-   GALERIA
-===================== */
+/* GALERIA */
 .galeria {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
+  display: flex;
+  gap: 0.75rem;
 }
 
 .galeria img {
-    width: 100%;
-    border-radius: 12px;
-    border: 2px solid transparent;
-    transition: transform 0.25s ease, border-color 0.25s ease;
+  width: 100%;
+  border-radius: 10px;
 }
 
-.galeria img:hover {
-    transform: scale(1.03);
-    border-color: var(--roxo-neon);
+/* ANIMAÇÃO SCROLL */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* =====================
-   BOTÃO WHATSAPP
-===================== */
-.btn-whatsapp {
-    display: block;
-    text-align: center;
-    margin-top: 16px;
-    padding: 16px;
-    background: linear-gradient(135deg, var(--roxo), var(--roxo-neon));
-    color: #fff;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 40px;
-    box-shadow: 0 0 20px rgba(122,60,255,0.4);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.btn-whatsapp:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(155,109,255,0.6);
+/* FALLBACK SEM JS */
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
 }
 
-/* =====================
-   FOOTER
-===================== */
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.85rem;
-    color: var(--texto-suave);
-}
-
-/* =====================
-   TABLET
-===================== */
-@media (min-width: 768px) {
-    header h1 {
-        font-size: 3.8rem;
-    }
-
-    main {
-        max-width: 1000px;
-        margin: auto;
-    }
-
-    .galeria {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* =====================
-   DESKTOP
-===================== */
-@media (min-width: 1024px) {
-    header {
-        padding: 90px 20px 70px;
-    }
-
-    section {
-        padding: 28px;
-    }
+/* MOBILE FINO */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
 }
